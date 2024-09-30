@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Frontend Mentor | Mortgage repayment calculator</title>
+
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/images/favicon-32x32.png"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <main>
+            <div class="container">
+                <section class="left">
+                    <form class="mortgage">
+                        <div class="mortgage__header header">
+                            <h1 class="header__title">Mortgage Calculator</h1>
+                            <button type="reset" class="header__reset">
+                                Clear All
+                            </button>
+                        </div>
+                        <div class="mortgage__amount amount">
+                            <label for="amount">Mortgage Amount</label>
+                            <section class="amount__input">
+                                <span class="amount__tag">£</span>
+                                <input
+                                    aria-required="true"
+                                    type="text"
+                                    name="amount"
+                                    id="amount"
+                                />
+                            </section>
+                            <p class="error">This field is required</p>
+                        </div>
+                        <div class="mortgage__termRate">
+                            <section class="mortgage__term term">
+                                <label for="term">Mortgage Term</label>
+                                <div class="input">
+                                    <input
+                                        aria-required="true"
+                                        class="term__input"
+                                        type="text"
+                                        name="term"
+                                        id="term"
+                                    />
+                                    <span class="term__tag">years</span>
+                                </div>
+                                <p class="error">This field is required</p>
+                            </section>
+                            <section class="mortgage__rate">
+                                <label for="rate">Interest Rate</label>
+                                <div class="input">
+                                    <input
+                                        aria-required="true"
+                                        class="rate__input"
+                                        type="text"
+                                        name="rate"
+                                        id="rate"
+                                    />
+                                    <span class="interest__tag">%</span>
+                                </div>
+                                <p class="error">This field is required</p>
+                            </section>
+                        </div>
+                        <div class="mortgage__type type">
+                            <h4 class="type__title">Mortgage Type</h4>
+                            <section class="mortgage__repayement">
+                                <input
+                                    type="radio"
+                                    name="type"
+                                    id="repayement"
+                                    value="repayement"
+                                />
+                                <label for="repayement">Repayment</label>
+                            </section>
+                            <section class="mortgage__interest">
+                                <input
+                                    type="radio"
+                                    name="type"
+                                    value="interest-only"
+                                    id="interest"
+                                />
+                                <label for="interest">Interest Only</label>
+                            </section>
+                            <p class="error">This field is required</p>
+                        </div>
+                        <button type="submit" class="calculate" id="calculate">
+                            <img
+                                src="assets/images/icon-calculator.svg"
+                                alt="calculator-icon"
+                            />
+                            <span>Calculate Repayements</span>
+                        </button>
+                    </form>
+                </section>
+                <section class="result">
+                    <div class="result__noResult">
+                        <img
+                            src="assets/images/illustration-empty.svg"
+                            alt=""
+                        />
+                        <h2 class="result__title">Results shown here</h2>
+                        <p class="result__message">
+                            Complete the form and click “calculate repayments”
+                            to see what your monthly repayments would be.
+                        </p>
+                    </div>
+
+                    <div class="result__withResult">
+                        <h2 class="result__title">Your results</h2>
+                        <p class="result__message">
+                            Your results are shown below based on the
+                            information you provided. To adjust the results,
+                            edit the form and click “calculate repayments” again
+                        </p>
+
+                        <div class="result__display">
+                            <section class="monthly">
+                                <p>Your monthly repayements</p>
+                                <h2 class="result__monthly" id="monthly-pay">
+                                    £1,45681264
+                                </h2>
+                            </section>
+                            <section class="total">
+                                <p>Total you'll repay over the term</p>
+                                <h2 class="result__term" id="total-pay">
+                                    £785,696
+                                </h2>
+                            </section>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </body>
+</html>

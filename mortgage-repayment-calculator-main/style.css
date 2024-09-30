@@ -1,0 +1,475 @@
+@font-face {
+    font-family: "Plus Jakarta Sans";
+    src: url(assets/fonts/static/PlusJakartaSans-Bold.ttf) format("truetype");
+    font-display: swap;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Plus Jakarta Sans";
+    src: url(assets/fonts/static/PlusJakartaSans-Medium.ttf) format("truetype");
+    font-display: swap;
+    font-weight: 500;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+    list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    background-color: var(--slate100);
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+:root {
+    font-family: "Plus Jakarta Sans";
+    /* Colors variables */
+    /* Primary */
+    --lime: hsl(61, 70%, 52%);
+    --lime-hover: hsl(61, 70%, 52%, 0.3);
+    --red: hsl(4, 69%, 50%);
+
+    /* Neutral */
+    --white: hsl(0, 0%, 100%);
+    --slate100: hsl(202, 86%, 94%);
+    --slate300: hsl(203, 41%, 72%);
+    --slate500: hsl(200, 26%, 54%);
+    --slate700: hsl(200, 24%, 40%);
+    --slate900: hsl(202, 55%, 16%);
+    --slate1000: hsl(202, 82%, 7%);
+
+    /* Fonnt Weights */
+    --medium: 500;
+    --bold: 700;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    max-width: 50rem;
+    background-color: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 0 1rem;
+}
+
+.left {
+    padding: 2rem;
+}
+
+.left {
+    background-color: var(--white);
+    width: 50%;
+}
+
+.result {
+    background-color: var(--slate900);
+    border-bottom-left-radius: 50px;
+    width: 50%;
+    text-align: center;
+    padding: 1rem;
+}
+
+.result__noResult {
+    margin-top: auto;
+    padding: 1rem;
+    /* display: none; */
+}
+
+.result img {
+    transform: scale(0.8);
+    margin: 0 auto;
+}
+
+.header button {
+    border: none;
+    background-color: transparent;
+    color: var(--slate700);
+    text-decoration: underline;
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+.header button:hover {
+    text-decoration: none;
+}
+
+.result__title,
+.header__title {
+    font-size: 1.2rem;
+    padding-bottom: 1rem;
+}
+
+form > * {
+    margin-bottom: 1.2rem;
+}
+
+section input {
+    margin-top: 0.5rem;
+}
+
+.header__title,
+.tag,
+.mortagage__type label {
+    color: var(--slate900);
+}
+
+.result__title {
+    color: var(--white);
+}
+
+.result__withResult {
+    display: none;   
+    padding: 1rem;
+    text-align: start;
+    width: 95%;
+}
+
+.result__display {
+    border: 1px solid var(--slate1000);
+    background-color: var(--slate1000);
+    margin-top: 1.5rem;
+    border-top: solid 5px var(--lime);
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    margin-inline: auto;
+}
+
+.result__display section {
+    padding: 1rem 1.5rem;
+}
+
+.result__monthly {
+    font-size: calc(1.5vw + 1.5rem);
+    color: var(--lime);
+}
+
+.result__term {
+    color: var(--white);
+    font-size: 1rem;
+    padding-top: 0.3rem;
+}
+
+.result__display .monthly {
+    border-bottom: 1px solid var(--slate700);
+}
+
+.mortgage__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.mortgage__amount input {
+    width: 100%;
+}
+
+.mortgage__termRate {
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+}
+
+.mortgage__term input,
+.mortgage__rate input {
+    width: 100%;
+}
+
+.mortgage__repayement,
+.mortgage__interest {
+    width: 100%;
+    border: solid 1px var(--slate700);
+    border-radius: 5px;
+    padding: 5px 0;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.mortgage__type section:hover {
+    border: 1px solid var(--lime);
+}
+
+.input {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    padding-right: 30px;
+    border: solid var(--slate700) 1px;
+    height: 2rem;
+    overflow: hidden;
+    border-radius: 5px;
+    top: 0.4rem;
+}
+.input > * {
+    margin: auto 0;
+    border: none;
+    height: 2rem;
+}
+:is(.mortgage__amount, .input) input {
+    cursor: pointer;
+}
+
+.amount__tag,
+.term__tag,
+.interest__tag {
+    position: absolute;
+}
+
+.amount__input {
+    position: relative;
+    border: solid 1px var(--slate700);
+    height: 2rem;
+    overflow: hidden;
+    border-radius: 5px;
+    top: 0.4rem;
+}
+
+.amount__input input {
+    padding-left: 50px;
+    margin: auto 0;
+    border: none;
+    height: 2rem;
+}
+.input:hover,
+.amount__input:hover {
+    border: 1px solid var(--lime);
+}
+
+.term__tag,
+.interest__tag,
+.amount__tag {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    color: var(--slate700);
+    font-weight: var(--bold);
+    background-color: var(--slate100);
+    display: block;
+    padding: 0 10px;
+    height: 99%;
+    border-left: none;
+}
+
+.amount__tag {
+    left: 0;
+    right: 100%;
+    padding: 0 20px;
+    border-right: none;
+}
+
+:is(.mortgage__amount, .mortgage__termRate) label,
+h4 {
+    font-size: 0.875rem;
+    color: var(--slate700);
+    font-weight: var(--medium);
+    margin-bottom: 0.4rem;
+}
+
+.mortgage__type label {
+    font-size: 0.875rem;
+    font-weight: var(--bold);
+    padding-left: 0.6em;
+}
+
+.calculate {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0.8em 1.5em;
+    width: 85%;
+    border-radius: 25px;
+    background-color: var(--lime);
+    border: none;
+    font-size: 0.875rem;
+    font-weight: var(--bold);
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+.calculate:hover,
+.calculate:focus {
+    background-color: var(--lime-hover);
+}
+
+.input:focus-within span,
+.amount__input:focus-within span {
+    background-color: var(--lime);
+    color: var(--slate900);
+}
+
+.input:focus-within,
+.amount__input:focus-within {
+    border-color: var(--lime);
+}
+
+.mortgage__type section:has(input:checked) {
+    background-color: var(--lime-hover);
+}
+
+input[type="radio"] {
+    accent-color: var(--lime);
+}
+
+.result__message,
+.result__display p {
+    color: var(--slate300);
+    font-size: 0.875rem;
+}
+
+.error {
+    color: var(--red);
+    padding-top: 0.5rem;
+    font-size: 0.7rem;
+    display: none;
+}
+
+.mortgage__type .error {
+    padding-top: 0;
+}
+
+@media only screen and (max-width: 750px) {
+    .mortgage__header,
+    .mortgage__termRate {
+        flex-direction: column;
+    }
+
+    .mortgage__rate {
+        margin-top: 1rem;
+    }
+
+    .result__display {
+        padding: 0;
+        margin: 1rem 0;
+        width: 100%;
+    }
+
+    .result__withResult {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+@media only screen and (min-width: 751px) {
+    .result__monthly {
+        font-size: 2.25rem;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    main {
+        align-items: start;
+    }
+
+    .container,
+    .mortgage__header,
+    .mortgage__termRate,
+    .form {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .container,
+    .result {
+        border-radius: 0;
+    }
+
+    .mortgage__termRate {
+        margin-bottom: 1rem;
+    }
+
+    .left,
+    .result {
+        width: 100%;
+    }
+
+    .mortgage__term label,
+    .mortgage__rate label {
+        display: block;
+    }
+
+    .input {
+        width: 100%;
+    }
+
+    .calculate {
+        width: 100%;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .mortgage__header {
+        margin-bottom: 1rem;
+    }
+}
