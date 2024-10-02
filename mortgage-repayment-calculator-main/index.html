@@ -28,7 +28,7 @@
                         <div class="mortgage__amount amount">
                             <label for="amount">Mortgage Amount</label>
                             <section class="amount__input">
-                                <span class="amount__tag">£</span>
+                                <span class="amount__tag tag--okay">£</span>
                                 <input
                                     aria-required="true"
                                     type="text"
@@ -36,7 +36,9 @@
                                     id="amount"
                                 />
                             </section>
-                            <p class="error">This field is required</p>
+                            <p class="error" hidden="true">
+                                This field is required
+                            </p>
                         </div>
                         <div class="mortgage__termRate">
                             <section class="mortgage__term term">
@@ -49,9 +51,13 @@
                                         name="term"
                                         id="term"
                                     />
-                                    <span class="term__tag">years</span>
+                                    <span class="term__tag tag--okay"
+                                        >years</span
+                                    >
                                 </div>
-                                <p class="error">This field is required</p>
+                                <p class="error" hidden="true">
+                                    This field is required
+                                </p>
                             </section>
                             <section class="mortgage__rate">
                                 <label for="rate">Interest Rate</label>
@@ -63,32 +69,42 @@
                                         name="rate"
                                         id="rate"
                                     />
-                                    <span class="interest__tag">%</span>
+                                    <span class="interest__tag tag--okay"
+                                        >%</span
+                                    >
                                 </div>
-                                <p class="error">This field is required</p>
+                                <p class="error" hidden="true">
+                                    This field is required
+                                </p>
                             </section>
                         </div>
                         <div class="mortgage__type type">
                             <h4 class="type__title">Mortgage Type</h4>
-                            <section class="mortgage__repayement">
-                                <input
-                                    type="radio"
-                                    name="type"
-                                    id="repayement"
-                                    value="repayement"
-                                />
-                                <label for="repayement">Repayment</label>
-                            </section>
-                            <section class="mortgage__interest">
-                                <input
-                                    type="radio"
-                                    name="type"
-                                    value="interest-only"
-                                    id="interest"
-                                />
-                                <label for="interest">Interest Only</label>
-                            </section>
-                            <p class="error">This field is required</p>
+                            <label for="repayement"
+                                ><section class="mortgage__repayement">
+                                    <input
+                                        type="radio"
+                                        name="type"
+                                        id="repayement"
+                                        value="repayement"
+                                    />
+                                    <label for="repayement">Repayment</label>
+                                </section>
+                            </label>
+                            <label for="interest"
+                                ><section class="mortgage__interest">
+                                    <input
+                                        type="radio"
+                                        name="type"
+                                        value="interest-only"
+                                        id="interest"
+                                    />
+                                    <label for="interest">Interest Only</label>
+                                </section>
+                            </label>
+                            <p class="error" hidden="true">
+                                This field is required
+                            </p>
                         </div>
                         <button type="submit" class="calculate" id="calculate">
                             <img
@@ -112,7 +128,7 @@
                         </p>
                     </div>
 
-                    <div class="result__withResult">
+                    <div class="result__withResult" hidden="true">
                         <h2 class="result__title">Your results</h2>
                         <p class="result__message">
                             Your results are shown below based on the
