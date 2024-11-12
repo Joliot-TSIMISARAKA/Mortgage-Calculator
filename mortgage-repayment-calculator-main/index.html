@@ -31,9 +31,10 @@
                                 <span class="amount__tag tag--okay">£</span>
                                 <input
                                     aria-required="true"
-                                    type="text"
+                                    type="number"
                                     name="amount"
                                     id="amount"
+                                    step=0.1
                                 />
                             </section>
                             <p class="error" hidden="true">
@@ -47,9 +48,10 @@
                                     <input
                                         aria-required="true"
                                         class="term__input"
-                                        type="text"
+                                        type="number"
                                         name="term"
                                         id="term"
+                                        step=0.1
                                     />
                                     <span class="term__tag tag--okay"
                                         >years</span
@@ -65,9 +67,10 @@
                                     <input
                                         aria-required="true"
                                         class="rate__input"
-                                        type="text"
+                                        type="number"
                                         name="rate"
                                         id="rate"
+                                        step=0.1
                                     />
                                     <span class="interest__tag tag--okay"
                                         >%</span
@@ -109,7 +112,7 @@
                         <button type="submit" class="calculate" id="calculate">
                             <img
                                 src="assets/images/icon-calculator.svg"
-                                alt="calculator-icon"
+                                alt=""
                             />
                             <span>Calculate Repayements</span>
                         </button>
